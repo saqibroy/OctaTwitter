@@ -1,0 +1,8 @@
+  <li>
+    <%= image_tag user.profile_pic.url(:small) %>
+    <%= link_to user.name,user %>
+    <% if current_user.admin? && !current_user?(user) %>
+    |
+    <%= link_to "Delete",user,method: :delete,data: {confirm: "You Sure?"} %>
+    <% end %>
+  </li>
